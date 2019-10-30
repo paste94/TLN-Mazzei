@@ -1,0 +1,22 @@
+# Esempio della forma dell'oggetto matrix presente nella funzione viterbi
+
+matrix = {
+    'START' = {
+        'prob' = [ ... array di probabilità che indicano una colonna ... ],
+        'prev_tag' = [ ... array di tag che indicano il backtrace della cella ... ]
+    },
+    'END' = {
+        'prob' = [ ... ],
+        'prev_tag' = [ ... ]
+    },
+    ...
+}
+
+Qiesta struttura è stata creata in questo modo per potere sfruttare il nome dei tag come chiavi. Creando una matrice
+classica sarei incorso in un paio di problemi:
+    - La matrice non supporta chiavi che sono stringhe ma solo chiavi numeriche, quindi avrei dovuto mappare ogni tag
+      con un intero
+    - Avrei dovuto creare per ogni elemento della matrice un oggetto che contenesse un campo probabilità ed un campo
+      backtrace
+    - Forse sarebbe stato più semplice da fare ma meno semplice da utilizzare. Eventualmente se dovessi trovarmi in
+      difficoltà posso usare quest'altra strada!
